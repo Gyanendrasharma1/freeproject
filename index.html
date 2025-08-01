@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Girlfriend Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #ffe4ec, #ffd1dc);
+      font-family: 'Dancing Script', cursive;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+
+    }
+
+    #textBox {
+      font-size: 3rem;
+      color: #b30059;
+      font-weight: bold;
+      max-width: 90%;
+      line-height: 1.5;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.2em;
+      background-color: #b30059;
+      animation: blink 0.7s steps(2, start) infinite;
+      margin-left: 5px;
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 15px 35px;
+      font-size: 1.4rem;
+      background-color: #ff4d88;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      font-family: 'Dancing Script', cursive;
+    }
+
+    #nextBtn {
+      display: none;
+    }
+
+    #slideshowContainer {
+      display: none;
+      width: 100vw;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    #slideshow {
+      display: flex;
+      width: max-content;
+      animation: scroll 7s linear forwards;
+    }
+
+    #slideshow img {
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    #questionBox {
+      display: none;
+      margin-top: 30px;
+      font-size: 2.2rem;
+      color: #800040;
+    }
+
+    #questionBox button {
+      margin: 15px;
+      display: inline-block;
+    }
+
+    #sunflowerBox {
+      display: none;
+      margin-top: 30px;
+      width: 320px;
+      height: 320px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      animation: fadeInZoom 1.5s ease-in-out;
+    }
+
+    #sunflowerBox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes fadeInZoom {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #textBox {
+        font-size: 2rem;
+      }
+
+      #slideshow img {
+        width: 200px;
+        height: 200px;
+      }
+
+      #sunflowerBox {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    #letterBox {
+      display: none;
+      max-width: 90%;
+      background-color: #fffaf0;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      font-family: 'Indie Flower', cursive;
+      font-size: 1.8rem;
+      color: #5b2c2c;
+      line-height: 1.6;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: fadeIn 2s ease;
+      text-align: left;
+      z-index: 10;
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animated gradient background */
+    body {
+      background: linear-gradient(-45deg, #ffd1dc, #ffe4ec, #ffc0cb, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradientFlow 12s ease infinite;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Floating animated hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Glow and pulse for buttons */
+    button#nextBtn,
+    button#yesBtn {
+      animation: pulseGlow 1.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 10px #ff66a3;
+      }
+
+      50% {
+        box-shadow: 0 0 20px #ff66a3, 0 0 40px #ff66a3;
+      }
+
+      100% {
+        box-shadow: 0 0 10px #ff66a3;
+      }
+    }
+
+    /* Sparkle heart effect behind sunflower */
+    #sunflowerBox::after {
+      content: "💖";
+      position: absolute;
+      font-size: 3rem;
+      animation: pulseHeart 1s infinite;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    @keyframes pulseHeart {
+      0% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.3) translate(-50%, -50%);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button id="startBtn">Start (click here)</button>
+
+  <div id="textBox"></div><span class="cursor"></span>
+  <button id="nextBtn">Next 💞</button>
+
+  <div id="slideshowContainer">
+    <div id="slideshow">
+      <img src="image.jpeg" />
+      <img src="image2.jpeg" />
+      <img src="image3.jpeg" />
+      <img src="image4.jpeg" />
+      <img src="image5.jpeg" />
+      <img src="image6.jpeg" />
+      <img src="image7.jpeg" />
+    </div>
+  </div>
+
+  <div id="questionBox">
+    <p><strong>Do you love me? 💖</strong></p>
+    <button id="yesBtn">Yes ❤️</button>
+    <button onclick="alert('I’ll try harder to make you love me 😢')">No 💔</button>
+  </div>
+
+  <div id="sunflowerBox">
+    <img src="Sunflower.jpg" alt="Sunflower Love" />
+  </div>
+  <audio id="sunflowerMusic" src="Die With A Smile-(SambalpuriStar.In).mp3" preload="auto" autoplay loop></audio>
+
+  <div id="letterBox">
+    <div id="letterContent"></div>
+    <span class="cursor">|</span>
+  </div>
+
+
+
+
+  <script>
+    const lines = [
+      "You’re the reason I smile a little more every day.",
+      "Your love feels like magic ✨",
+      "I wrote this... just for you ❤️",
+      "Even though we’re miles apart, you’re always in my heart.",
+    ];
+
+    const textBox = document.getElementById('textBox');
+    const nextBtn = document.getElementById('nextBtn');
+    const cursor = document.querySelector('.cursor');
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    function typeLine() {
+      const currentLine = lines[lineIndex];
+      if (charIndex < currentLine.length) {
+        textBox.innerHTML += currentLine.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeLine, 70);
+      } else {
+        textBox.innerHTML += "<br><br>";
+        lineIndex++;
+        charIndex = 0;
+        if (lineIndex < lines.length) {
+          setTimeout(typeLine, 800);
+        } else {
+          cursor.style.display = "none";
+          nextBtn.style.display = 'inline-block';
+        }
+      }
+    }
+
+    nextBtn.addEventListener('click', () => {
+      textBox.style.display = 'none';
+      nextBtn.style.display = 'none';
+      cursor.style.display = 'none';
+
+      const slideshow = document.getElementById("slideshowContainer");
+      slideshow.style.display = "block";
+      setTimeout(() => {
+        document.getElementById("slideshowContainer").style.display = "none";
+        document.getElementById("sunflowerBox").style.display = "block"; // ✅ Show sunflower
+
+        setTimeout(() => {
+          document.getElementById("sunflowerBox").style.display = "none"; // ✅ Then hide sunflower
+          letterBox.style.display = "block";  // ✅ Show letter
+          typeLetter(letterText);
+        }, 7000); // Wait 7 seconds with sunflower
+      }, 7000); // Wait 7 seconds after slideshow
+
+    });
+
+    const letterText = `My Love,
+
+Happy Girlfriend Day, meri jaan.
+
+Even though miles separate us, not a single moment goes by without me thinking of you. Every morning I wake up wishing I could hold your hand, and every night I sleep with your memories wrapped around me like a warm blanket.
+Long distance is not easy, but loving you is the easiest thing I’ve ever done.
+There are days when I miss your laugh more than anything, and moments when all I need is one hug from you to make everything okay. But you know what keeps me going?
+The way you love me — selflessly, patiently, beautifully.
+You have no idea how proud I am to have you in my life. You’re strong, kind, understanding, and insanely beautiful — both inside and out. Even in silence, you make me feel heard. Even across cities, you make me feel loved.
+Today, on Girlfriend Day, I want you to know:
+I’m not just in a relationship with you.
+I’m building a future with you.
+Every struggle we face now will only make our bond stronger.
+Because at the end of every day — it’s *you* I want.
+
+One day, we’ll look back at this phase and smile,
+because we made it through the distance,
+the wait,
+the longing,
+and still loved harder than ever.
+
+Until then, I’ll keep texting you good mornings and good nights,
+I’ll keep dreaming about our dates and our future,
+I’ll keep holding you in my heart — where you’ve always belonged.
+
+I love you endlessly.  
+I miss you more than words.  
+And I promise, this distance is temporary — but our love is forever.
+
+Forever yours,  
+**Gyan 💌**
+`;
+
+    const letterBox = document.getElementById("letterBox");
+    const letterContent = document.getElementById("letterContent");
+
+    function typeLetter(text, index = 0) {
+      if (index < text.length) {
+        const char = text.charAt(index);
+        letterContent.innerHTML += (char === '\n') ? "<br>" : char;
+        setTimeout(() => typeLetter(text, index + 1), 60);
+      }
+    }
+
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      document.getElementById("questionBox").style.display = "none";
+      document.getElementById("sunflowerBox").style.display = "block";
+      document.getElementById("sunflowerMusic").play();
+
+      setTimeout(() => {
+        letterBox.style.display = "block";
+        typeLetter(letterText);
+      }, 7000); // Show letter after sunflower
+    });
+    document.getElementById("startBtn").addEventListener("click", () => {
+      document.getElementById("sunflowerMusic").play(); // Starts music safely
+      document.getElementById("startBtn").style.display = "none";
+      typeLine(); // Begin the animation
+    });
+
+    // Start the first typewriter
+    typeLine();
+
+
+  </script>
+</body>
+
+</html>
